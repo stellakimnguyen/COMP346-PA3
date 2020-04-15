@@ -1,6 +1,4 @@
-package assignment3;
-
-import assignment3.common.BaseThread;
+import common.BaseThread;
 import java.util.Random;
 
 /**
@@ -9,7 +7,7 @@ import java.util.Random;
  *
  * @author Serguei A. Mokhov, mokhov@cs.concordia.ca
  */
-public class Philosopher extends assignment3.common.BaseThread
+public class Philosopher extends common.BaseThread
 {
 	/**
 	 * Max time an action can take (in milliseconds)
