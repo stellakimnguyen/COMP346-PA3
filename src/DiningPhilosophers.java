@@ -48,16 +48,20 @@ public class DiningPhilosophers
 			 * Should be settable from the command line
 			 * or the default if no arguments supplied.
 			 */
+
+			// TASK 3
 			Scanner keyboard = new Scanner(System.in);
-			System.out.println("Input the number of philosophers: ");
-			userInput = keyboard.next();
+			System.out.print("Input the number of philosophers: ");
+			userInput = keyboard.nextLine(); // choose default on ENTER (no input)
 
 			int iPhilosophers;
 
-			if (userInput.isEmpty() || userInput.equals(" ")) {
-				iPhilosophers = 4;
+			// "\"" + userInput + "\" is not a positive decimal integer. System Terminated."
+
+			if (userInput.replaceAll("\\s","").isEmpty()) { // remove whitespace
+				iPhilosophers = DEFAULT_NUMBER_OF_PHILOSOPHERS;
 			} else {
-				iPhilosophers = Integer.parseInt(userInput);
+				iPhilosophers = Integer.parseInt(userInput.replaceAll("[^(0-9, \\-)]", ""));
 			}
 
 			// Make the monitor aware of how many philosophers there are
@@ -73,7 +77,7 @@ public class DiningPhilosophers
 				aoPhilosophers[j].start();
 			}
 
-			System.out.println(iPhilosophers + " philosopher(s) came in for a dinner.");
+			System.out.println("\n" + iPhilosophers + " philosopher(s) came in for a dinner.");
 
 			// Main waits for all its children to die...
 			// I mean, philosophers to finish their dinner.
@@ -89,10 +93,11 @@ public class DiningPhilosophers
 			reportException(e);
 			System.exit(1);
 		}
-		catch(NumberFormatException e){
+		// TASK 3
+		catch(NumberFormatException | NegativeArraySizeException e){
 			System.err.println("\"" + userInput + "\" is not a positive decimal integer. System Terminated.");
 		}
-	} // main()
+	} // main
 
 	/**
 	 * Outputs exception information to STDERR

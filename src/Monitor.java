@@ -43,6 +43,8 @@ public class Monitor
 	 * Grants request (returns) to eat when both chopsticks/forks are available.
 	 * Else forces the philosopher to wait()
 	 */
+
+	// TASK 2
 	public synchronized void pickUp(final int piTID) {
 
 		// while chopsticks on the left and right are taken
@@ -62,6 +64,8 @@ public class Monitor
 	 * When a given philosopher's done eating, they put the chopstiks/forks down
 	 * and let others know they are available.
 	 */
+
+	// TASK 2
 	public synchronized void putDown(final int piTID)
 	{
 		chopsticks[(piTID-1)%(chopsticks.length)] = chopsticks[(piTID)%(chopsticks.length)] = true; // chopsticks back on the table
@@ -73,6 +77,8 @@ public class Monitor
 	 * Only one philopher at a time is allowed to philosophy
 	 * (while she is not eating).
 	 */
+
+	// TASK 2
 	public synchronized void requestTalk() 
 	{
 		while (!isTurnToTalk) {
@@ -90,6 +96,8 @@ public class Monitor
 	 * When one philosopher is done talking stuff, others
 	 * can feel free to start talking.
 	 */
+
+	// TASK 2
 	public synchronized void endTalk()
 	{
 		this.notifyAll();

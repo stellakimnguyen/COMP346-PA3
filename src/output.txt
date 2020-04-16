@@ -1,0 +1,221 @@
+Input the number of philosophers: 4
+
+4 philosopher(s) came in for a dinner.
+Philosopher ID: 1 started eating
+Philosopher ID: 3 started eating
+Philosopher ID: 1 finished eating
+Philosopher ID: 1 started thinking
+Philosopher ID: 1 finished thinking
+Philosopher ID: 1 started talking
+Philosopher 1 says: 2 + 2 = 5 for extremely large values of 2...
+Philosopher ID: 1 finished talking
+Philosopher ID: 1 started eating
+Philosopher ID: 3 finished eating
+Philosopher ID: 3 started thinking
+Philosopher ID: 1 finished eating
+Philosopher ID: 1 started thinking
+Philosopher ID: 4 started eating
+Philosopher ID: 2 started eating
+Philosopher ID: 3 finished thinking
+Philosopher ID: 3 started talking
+Philosopher 3 says: Eh, it's not easy to be a philosopher: eat, think, talk, eat...
+Philosopher ID: 3 finished talking
+Philosopher ID: 1 finished thinking
+Philosopher ID: 1 started talking
+Philosopher 1 says: My number is 1
+Philosopher ID: 1 finished talking
+Philosopher ID: 4 finished eating
+Philosopher ID: 4 started thinking
+Philosopher ID: 2 finished eating
+Philosopher ID: 2 started thinking
+Philosopher ID: 3 started eating
+Philosopher ID: 1 started eating
+Philosopher ID: 2 finished thinking
+Philosopher ID: 4 finished thinking
+Philosopher ID: 4 started talking
+Philosopher 4 says: You know, true is false and false is true if you think of it
+Philosopher ID: 4 finished talking
+Philosopher ID: 1 finished eating
+Philosopher ID: 1 started thinking
+Philosopher ID: 3 finished eating
+Philosopher ID: 2 started eating
+Philosopher ID: 3 started thinking
+Philosopher ID: 4 started eating
+Philosopher ID: 3 finished thinking
+Philosopher ID: 1 finished thinking
+Philosopher ID: 1 started talking
+Philosopher 1 says: You know, true is false and false is true if you think of it
+Philosopher ID: 1 finished talking
+Philosopher ID: 2 finished eating
+Philosopher ID: 2 started thinking
+Philosopher ID: 4 finished eating
+Philosopher ID: 4 started thinking
+Philosopher ID: 3 started eating
+Philosopher ID: 1 started eating
+Philosopher ID: 2 finished thinking
+Philosopher ID: 2 started talking
+Philosopher 2 says: You know, true is false and false is true if you think of it
+Philosopher ID: 2 finished talking
+Philosopher ID: 4 finished thinking
+Philosopher ID: 1 finished eating
+Philosopher ID: 1 started thinking
+Philosopher ID: 3 finished eating
+Philosopher ID: 2 started eating
+Philosopher ID: 4 started eating
+Philosopher ID: 3 started thinking
+Philosopher ID: 2 finished eating
+Philosopher ID: 2 started thinking
+Philosopher ID: 2 finished thinking
+Philosopher ID: 2 started eating
+Philosopher ID: 1 finished thinking
+Philosopher ID: 1 started talking
+Philosopher 1 says: Eh, it's not easy to be a philosopher: eat, think, talk, eat...
+Philosopher ID: 1 finished talking
+Philosopher ID: 4 finished eating
+Philosopher ID: 4 started thinking
+Philosopher ID: 3 finished thinking
+Philosopher ID: 3 started talking
+Philosopher 3 says: 2 + 2 = 5 for extremely large values of 2...
+Philosopher ID: 3 finished talking
+Philosopher ID: 2 finished eating
+Philosopher ID: 3 started eating
+Philosopher ID: 1 started eating
+Philosopher ID: 2 started thinking
+Philosopher ID: 2 finished thinking
+Philosopher ID: 4 finished thinking
+Philosopher ID: 1 finished eating
+Philosopher ID: 1 started thinking
+Philosopher ID: 3 finished eating
+Philosopher ID: 2 started eating
+Philosopher ID: 4 started eating
+Philosopher ID: 3 started thinking
+Philosopher ID: 1 finished thinking
+Philosopher ID: 1 started talking
+Philosopher 1 says: 2 + 2 = 5 for extremely large values of 2...
+Philosopher ID: 1 finished talking
+Philosopher ID: 2 finished eating
+Philosopher ID: 2 started thinking
+Philosopher ID: 4 finished eating
+Philosopher ID: 1 started eating
+Philosopher ID: 4 started thinking
+Philosopher ID: 3 finished thinking
+Philosopher ID: 3 started talking
+Philosopher 3 says: Eh, it's not easy to be a philosopher: eat, think, talk, eat...
+Philosopher ID: 3 finished talking
+Philosopher ID: 3 started eating
+Philosopher ID: 3 finished eating
+Philosopher ID: 3 started thinking
+Philosopher ID: 4 finished thinking
+Philosopher ID: 4 started talking
+Philosopher 4 says: If thee cannot speak, thee must be silent
+Philosopher ID: 4 finished talking
+Philosopher ID: 1 finished eating
+Philosopher ID: 1 started thinking
+Philosopher ID: 4 started eating
+Philosopher ID: 3 finished thinking
+Philosopher ID: 2 finished thinking
+Philosopher ID: 2 started eating
+Philosopher ID: 1 finished thinking
+Philosopher ID: 4 finished eating
+Philosopher ID: 4 started thinking
+Philosopher ID: 2 finished eating
+Philosopher ID: 2 started thinking
+Philosopher ID: 3 started eating
+Philosopher ID: 1 started eating
+Philosopher ID: 3 finished eating
+Philosopher ID: 3 started thinking
+Philosopher ID: 4 finished thinking
+Philosopher ID: 1 finished eating
+Philosopher ID: 4 started eating
+Philosopher ID: 1 started thinking
+Philosopher ID: 2 finished thinking
+Philosopher ID: 2 started talking
+Philosopher 2 says: My number is 2
+Philosopher ID: 2 finished talking
+Philosopher ID: 2 started eating
+Philosopher ID: 3 finished thinking
+Philosopher ID: 2 finished eating
+Philosopher ID: 2 started thinking
+Philosopher ID: 1 finished thinking
+Philosopher ID: 4 finished eating
+Philosopher ID: 1 started eating
+Philosopher ID: 3 started eating
+Philosopher ID: 4 started thinking
+Philosopher ID: 1 finished eating
+Philosopher ID: 1 started thinking
+Philosopher ID: 2 finished thinking
+Philosopher ID: 2 started talking
+Philosopher 2 says: If thee cannot speak, thee must be silent
+Philosopher ID: 2 finished talking
+Philosopher ID: 3 finished eating
+Philosopher ID: 3 started thinking
+Philosopher ID: 2 started eating
+Philosopher ID: 1 finished thinking
+Philosopher ID: 4 finished thinking
+Philosopher ID: 4 started talking
+Philosopher 4 says: If thee cannot speak, thee must be silent
+Philosopher ID: 4 finished talking
+Philosopher ID: 4 started eating
+Philosopher ID: 2 finished eating
+Philosopher ID: 2 started thinking
+Philosopher ID: 2 finished thinking
+Philosopher ID: 2 started talking
+Philosopher 2 says: 2 + 2 = 5 for extremely large values of 2...
+Philosopher ID: 2 finished talking
+Philosopher ID: 2 started eating
+Philosopher ID: 2 finished eating
+Philosopher ID: 2 started thinking
+Philosopher ID: 3 finished thinking
+Philosopher ID: 4 finished eating
+Philosopher ID: 3 started eating
+Philosopher ID: 1 started eating
+Philosopher ID: 4 started thinking
+Philosopher ID: 4 finished thinking
+Philosopher ID: 1 finished eating
+Philosopher ID: 1 started thinking
+Philosopher ID: 2 finished thinking
+Philosopher ID: 3 finished eating
+Philosopher ID: 3 started thinking
+Philosopher ID: 2 started eating
+Philosopher ID: 4 started eating
+Philosopher ID: 1 finished thinking
+Philosopher ID: 3 finished thinking
+Philosopher ID: 2 finished eating
+Philosopher ID: 2 started thinking
+Philosopher ID: 2 finished thinking
+Philosopher ID: 4 finished eating
+Philosopher ID: 4 started thinking
+Philosopher ID: 1 started eating
+Philosopher ID: 3 started eating
+Philosopher ID: 3 finished eating
+Philosopher ID: 3 started thinking
+Philosopher ID: 3 finished thinking
+Philosopher ID: 3 started eating
+Philosopher ID: 4 finished thinking
+Philosopher ID: 4 started talking
+Philosopher 4 says: Eh, it's not easy to be a philosopher: eat, think, talk, eat...
+Philosopher ID: 4 finished talking
+Philosopher ID: 1 finished eating
+Philosopher ID: 1 started thinking
+Philosopher ID: 3 finished eating
+Philosopher ID: 4 started eating
+Philosopher ID: 3 started thinking
+Philosopher ID: 3 finished thinking
+Philosopher ID: 3 started talking
+Philosopher 3 says: If thee cannot speak, thee must be silent
+Philosopher ID: 3 finished talking
+Philosopher ID: 1 finished thinking
+Philosopher ID: 1 started talking
+Philosopher 1 says: If thee cannot speak, thee must be silent
+Philosopher ID: 1 finished talking
+Philosopher ID: 4 finished eating
+Philosopher ID: 4 started thinking
+Philosopher ID: 4 finished thinking
+Philosopher ID: 4 started talking
+Philosopher 4 says: 2 + 2 = 5 for extremely large values of 2...
+Philosopher ID: 4 finished talking
+Philosopher ID: 4 started eating
+Philosopher ID: 4 finished eating
+Philosopher ID: 4 started thinking
+Philosopher ID: 4 finished thinking
+All philosophers have left. System terminates normally.
