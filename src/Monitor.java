@@ -13,9 +13,9 @@ public class Monitor
 	 * Data members
 	 * ------------
 	 */
-	boolean [] philEat;
-	boolean [] cs;
-	boolean talkTurn;
+	boolean [] philosopherIsEating;
+	boolean [] chopsticks;
+	boolean isTurnToTalk;
 	
 	/**
 	 * Constructor
@@ -23,12 +23,14 @@ public class Monitor
 	public Monitor(int piNumberOfPhilosophers)
 	{
 		// TODO: set appropriate number of chopsticks based on the # of philosophers
-		cs = new boolean[piNumberOfPhilosophers];
-		philEat = new boolean[piNumberOfPhilosophers];
-		talkTurn = true;
+		// set array of chopsticks boolean to number of participating philosophers on the table
+		chopsticks = new boolean[piNumberOfPhilosophers];
+		philosopherIsEating = new boolean[piNumberOfPhilosophers];
+		isTurnToTalk = true;
 
-		for(int i = 0; i < cs.length; i++)
-			cs[i] = true;
+		for(int i = 0; i < chopsticks.length; i++) {
+			chopsticks[i] = true; // all chopsticks are on the table
+		}
 	}
 
 	/*
@@ -43,37 +45,37 @@ public class Monitor
 	 */
 	public synchronized void pickUp(final int piTID) {
 
-		while (!(cs[(piTID-1)%(cs.length)] && cs[(piTID)%(cs.length)])) {
+		// while chopsticks on the left and right are taken
+		while (!(chopsticks[(piTID-1)%(chopsticks.length)] && chopsticks[(piTID)%(chopsticks.length)])) {
 			try {
-				this.wait();
+				this.wait(); // wait until notified
 			} catch (InterruptedException e) {
 				e.printStackTrace();
 			}
 		}
 
-		cs[(piTID)%(cs.length)] = false;
-		cs[(piTID-1)%(cs.length)] = false;
+		chopsticks[(piTID)%(chopsticks.length)] = false; // right chopstick are no longer on the table
+		chopsticks[(piTID-1)%(chopsticks.length)] = false; // left chopstick are no longer on the table
 	}
 
 	/**
-	 * When a given philosopher's done eating, they put the chopsticks/forks down
+	 * When a given philosopher's done eating, they put the chopstiks/forks down
 	 * and let others know they are available.
 	 */
 	public synchronized void putDown(final int piTID)
 	{
-		cs[(piTID-1)%(cs.length)] = cs[(piTID)%(cs.length)] = true;
+		chopsticks[(piTID-1)%(chopsticks.length)] = chopsticks[(piTID)%(chopsticks.length)] = true; // chopsticks back on the table
 		
 		this.notifyAll();
 	}
 
 	/**
-	 * Only one philosopher at a time is allowed to philosophise
+	 * Only one philopher at a time is allowed to philosophy
 	 * (while she is not eating).
-	 * @throws InterruptedException 
 	 */
 	public synchronized void requestTalk() 
 	{
-		while (!talkTurn) {
+		while (!isTurnToTalk) {
 			try {
 				this.wait();
 			} catch (InterruptedException e) {
@@ -81,7 +83,7 @@ public class Monitor
 			}
 		}
 
-		talkTurn = true;
+		isTurnToTalk = true;
 	}
 
 	/**
@@ -90,7 +92,6 @@ public class Monitor
 	 */
 	public synchronized void endTalk()
 	{
-		talkTurn = true;
 		this.notifyAll();
 	}
 }

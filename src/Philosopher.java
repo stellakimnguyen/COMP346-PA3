@@ -13,7 +13,6 @@ public class Philosopher extends common.BaseThread
 	 * Max time an action can take (in milliseconds)
 	 */
 	public static final long TIME_TO_WASTE = 1000;
-	private Random willTalk = new Random();
 	
 	/**
 	 * The act of eating.
@@ -23,18 +22,21 @@ public class Philosopher extends common.BaseThread
 	 * - yield
 	 * - The print that they are done eating.
 	 */
-	public void eat()//-----TASK 1------
+
+	// TASK 1
+	public void eat()
 	{
 		try
 		{
-			System.out.println("Philosopher #" + getTID() + " has started eating...");
+			System.out.println("Philosopher ID: " + getTID() + " started eating");
+			yield();
 			sleep((long)(Math.random() * TIME_TO_WASTE));
 			yield();
-			System.out.println("Philosopher #" + getTID() + "has finished eating...");
+			System.out.println("Philosopher ID: " + getTID() + " finished eating");
 		}
 		catch(InterruptedException e)
 		{
-			System.err.println("Philosopher.eat():");
+			System.err.println("Philosopher.eat(): ");
 			DiningPhilosophers.reportException(e);
 			System.exit(1);
 		}
@@ -48,17 +50,20 @@ public class Philosopher extends common.BaseThread
 	 * - yield
 	 * - The print that they are done thinking.
 	 */
-	public void think()//-----TASK 1------
+
+	// TASK 1
+	public void think()
 	{
-		try{
-		System.out.println("Philosopher #" + getTID() + " has started thinking...");
-		yield();
-		sleep((long)(Math.random() * TIME_TO_WASTE));
-		yield();
-		System.out.println("Philosopher #" + getTID() + "has finished thinking...");
+		try
+		{
+			System.out.println("Philosopher ID: " + getTID() + " started thinking");
+			yield();
+			sleep((long)(Math.random() * TIME_TO_WASTE));
+			yield();
+			System.out.println("Philosopher ID: " + getTID() + " finished thinking");
 		}
-		catch (InterruptedException e){
-			System.err.println("Philosopher.think():");
+		catch (InterruptedException e) {
+			System.err.println("Philosopher.think(): ");
 			DiningPhilosophers.reportException(e);
 			System.exit(1);
 		}
@@ -72,46 +77,61 @@ public class Philosopher extends common.BaseThread
 	 * - yield
 	 * - The print that they are done talking.
 	 */
-	public void talk()//-----TASK 1------
+
+	// TASK 1
+	public void talk()
 	{
-		System.out.println("Philosopher #" + getTID() + " has started talking...");
-		yield();
-		saySomething();
-		yield();
-		System.out.println("Philosopher #" + getTID() + " has finished talking...");
+		try {
+			System.out.println("Philosopher ID: " + getTID() + " started talking");
+			yield();
+			saySomething(); // active action instead of constant state
+			yield();
+			System.out.println("Philosopher ID: " + getTID() + " finished talking");
+		}
+		catch (Exception e) { // no InterruptedException as there is no sleep in try-block
+			System.err.println("Philosopher.talk(): ");
+			DiningPhilosophers.reportException(e);
+			System.exit(1);
+		}
 	}
 
 	/**
 	 * No, this is not the act of running, just the overridden Thread.run()
 	 */
-	public void run()
-	{
-		for(int i = 0; i < DiningPhilosophers.DINING_STEPS; i++)
-		{
-			DiningPhilosophers.soMonitor.pickUp(getTID());
-			//if(readyToEat)
-			eat();
 
-			DiningPhilosophers.soMonitor.putDown(getTID());
-			think();
+	// TASK 1
+	public void run() {
+		for (int i = 0; i < DiningPhilosophers.DINING_STEPS; i++) {
+			try {
+				DiningPhilosophers.soMonitor.pickUp(getTID());
 
-			/*
-			 * TODO:
-			 * A decision is made at random whether this particular
-			 * philosopher is about to say something terribly useful.
-			 */
-			// 1/6 chance to attempt to speak
-			if(willTalk.nextInt(6) == 5) 
-			{
-				// Some monitor ops down here...
-				DiningPhilosophers.soMonitor.requestTalk();
-			
-				talk();
-				DiningPhilosophers.soMonitor.endTalk();
-				// ...
+				eat();
+
+				DiningPhilosophers.soMonitor.putDown(getTID());
+
+				think();
+
+				/*
+				 * TODO:
+				 * A decision is made at random whether this particular
+				 * philosopher is about to say something terribly useful.
+				 */
+
+				Random randomBool = new Random();
+
+				// Get next random true or false (1/2 chances to talk)
+				if (randomBool.nextBoolean()) {
+					DiningPhilosophers.soMonitor.requestTalk();
+					talk();
+					DiningPhilosophers.soMonitor.endTalk();
+				}
+
+				yield();
+			} catch (Exception e) {
+				System.err.println("Philosopher.run(): ");
+				DiningPhilosophers.reportException(e);
+				System.exit(1);
 			}
-
-			yield();
 		}
 	} // run()
 

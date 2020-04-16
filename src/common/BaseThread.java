@@ -1,4 +1,4 @@
-package assignment3.common;
+package common;
 
 import java.util.Random;
 
@@ -11,7 +11,7 @@ import java.util.Random;
  * Plus some methods for the sync exercises.
  *
  * $Revision: 1.2 $
- * $Last Revision Date: 2015/03/02 $
+ * $Last Revision Date: 2018/03/06 $
  *
  * @author Serguei A. Mokhov, mokhov@cs.concordia.ca
  */

@@ -39,7 +39,7 @@ public class DiningPhilosophers
 	/**
 	 * Main system starts up right here
 	 */
-	public static void main(String[] argv)
+	public static void main(String[] args)
 	{
 		try
 		{
@@ -49,9 +49,9 @@ public class DiningPhilosophers
 			 * or the default if no arguments supplied.
 			 */
 			
-			Scanner user = new Scanner(System.in);
-			System.out.println("Input the number of philosophers:");
-			enteredData = user.next();
+			Scanner keyboard = new Scanner(System.in);
+			System.out.println("Input the number of philosophers: ");
+			enteredData = keyboard.next();
 			int iPhilosophers = Integer.parseInt(enteredData);
 
 			// Make the monitor aware of how many philosophers there are
@@ -60,11 +60,6 @@ public class DiningPhilosophers
 			// Space for all the philosophers
 			Philosopher aoPhilosophers[] = new Philosopher[iPhilosophers];
 
-			System.out.println
-			(
-				iPhilosophers + " philosopher(s) came in for a dinner."
-			);
-			
 			// Let 'em sit down
 			for(int j = 0; j < iPhilosophers; j++)
 			{
@@ -72,7 +67,11 @@ public class DiningPhilosophers
 				aoPhilosophers[j].start();
 			}
 
-		
+			System.out.println
+			(
+				iPhilosophers +
+				" philosopher(s) came in for a dinner."
+			);
 
 			// Main waits for all its children to die...
 			// I mean, philosophers to finish their dinner.
@@ -80,7 +79,7 @@ public class DiningPhilosophers
 				aoPhilosophers[j].join();
 
 			System.out.println("All philosophers have left. System terminates normally.");
-			user.close();
+			keyboard.close();
 		}
 		catch(InterruptedException e)
 		{
