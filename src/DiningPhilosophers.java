@@ -13,7 +13,7 @@ public class DiningPhilosophers
 	 * Data members
 	 * ------------
 	 */
-	public static String enteredData;
+	public static String userInput;
 	/**
 	 * This default may be overridden from the command line
 	 */
@@ -26,7 +26,7 @@ public class DiningPhilosophers
 	public static final int DINING_STEPS = 10;
 
 	/**
-	 * Our shared monitor for the philosphers to consult
+	 * Our shared monitor for the philosophers to consult
 	 */
 	public static Monitor soMonitor = null;
 
@@ -48,11 +48,17 @@ public class DiningPhilosophers
 			 * Should be settable from the command line
 			 * or the default if no arguments supplied.
 			 */
-			
 			Scanner keyboard = new Scanner(System.in);
 			System.out.println("Input the number of philosophers: ");
-			enteredData = keyboard.next();
-			int iPhilosophers = Integer.parseInt(enteredData);
+			userInput = keyboard.next();
+
+			int iPhilosophers;
+
+			if (userInput.isEmpty() || userInput.equals(" ")) {
+				iPhilosophers = 4;
+			} else {
+				iPhilosophers = Integer.parseInt(userInput);
+			}
 
 			// Make the monitor aware of how many philosophers there are
 			soMonitor = new Monitor(iPhilosophers);
@@ -67,11 +73,7 @@ public class DiningPhilosophers
 				aoPhilosophers[j].start();
 			}
 
-			System.out.println
-			(
-				iPhilosophers +
-				" philosopher(s) came in for a dinner."
-			);
+			System.out.println(iPhilosophers + " philosopher(s) came in for a dinner.");
 
 			// Main waits for all its children to die...
 			// I mean, philosophers to finish their dinner.
@@ -83,12 +85,12 @@ public class DiningPhilosophers
 		}
 		catch(InterruptedException e)
 		{
-			System.err.println("main():");
+			System.err.println("main(): ");
 			reportException(e);
 			System.exit(1);
 		}
 		catch(NumberFormatException e){
-			System.err.println("\"" + enteredData + "\" is not a positive decimal integer. System Terminated.");
+			System.err.println("\"" + userInput + "\" is not a positive decimal integer. System Terminated.");
 		}
 	} // main()
 
